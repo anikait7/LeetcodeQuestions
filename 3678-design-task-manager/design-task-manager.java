@@ -41,13 +41,14 @@ class TaskManager
         List<Integer> temp = new ArrayList<>();
         temp.add(userId);         temp.add(priority);
 
-        map.put(taskId,temp);        
+        map.put(taskId,temp);         
     }
     
     public void edit(int taskId, int newPriority) 
     {
         List<Integer> temp = map.get(taskId);
-
+        
+        //checking if the priority is same as previous
         if(newPriority==temp.get(1))
             return ;
 
