@@ -1,2 +1,2 @@
 # LeetcodeQuestions
-Personal archive of solved LeetCode problems. Synced directly from submissions to showcase coding practice, problem-solving skills, and algorithm knowledge.
+This repository contains my solutions to LeetCode problems that I solve every day. The goal is to improve problem-solving skills, strengthen Data Structures & Algorithms (DSA) knowledge, and stay consistent.
