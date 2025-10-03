@@ -1,5 +1,11 @@
 class Router 
 {
+    /*
+Reason for TLE in this question -> We know the input is in sorted manner. We cant store timestamp ONLY in the set as duplicate will be prevented. We cant use List to store timestamp as if we wantt o delete the 0th index its an O(N) process as the other elements gets shifted so we use List along with a pointer wich tells us the valid window.
+HashSet is used to check for duplicate routes.
+Queue is used to process the routes on FCFS basis.
+Map is used to help us apply binary search to minimize T.C.
+    */
     class Pair
     {
         List<Integer> time;
