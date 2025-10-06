@@ -16,16 +16,10 @@ class MovieRentingSystem
     {
         for(int a[] : entries)
         {
-            List<Integer> key = new ArrayList<>();
-            key.add(a[0]);      key.add(a[1]);
-            map.put(key,a[2]);  // (shop+movie) -> cost
+            map.put(Arrays.asList(a[0],a[1]),a[2]);  // (shop+movie) -> cost
 
             if(data.containsKey(a[1]))
-            {
-                List<Integer> temp = new ArrayList<>();
-                temp.add(a[0]);      temp.add(a[2]);
-                data.get(a[1]).add(temp);  // movie -> (shop+cost)      
-            }
+                data.get(a[1]).add(Arrays.asList(a[0],a[2]));  // movie -> (shop+cost)
             else
             {
                 TreeSet<List<Integer>> p = new TreeSet<>((x,y) -> {
@@ -36,9 +30,7 @@ class MovieRentingSystem
                 });
 
                 data.put(a[1],p);
-                List<Integer> temp = new ArrayList<>();
-                temp.add(a[0]);      temp.add(a[2]);
-                data.get(a[1]).add(temp);  // movie -> (shop+cost)
+                data.get(a[1]).add(Arrays.asList(a[0],a[2]));  // movie -> (shop+cost)
             }
         }
     }
@@ -64,40 +56,21 @@ class MovieRentingSystem
     
     public void rent(int shop, int movie) 
     {
-        List<Integer> temp = new ArrayList<>();
-        temp.add(shop);
-        temp.add(movie);
+       List<Integer> temp = Arrays.asList(shop,movie);
+       int x = map.get(temp);
 
-        int x = map.get(temp);
-
-        List<Integer> temp1 = new ArrayList<>(); 
-        temp1.add(shop);      temp1.add(x);
-
-        data.get(movie).remove(temp1);
-        
-        List<Integer> adds = new ArrayList<>();
-        adds.add(shop);    adds.add(movie);   adds.add(x);
-
-        rented.add(adds);
+       data.get(movie).remove(Arrays.asList(shop,x));
+       List<Integer> temp1 = Arrays.asList(shop,movie,x);
+       rented.add(temp1);
     }
     
     public void drop(int shop, int movie) 
     {
-        List<Integer> temp = new ArrayList<>();
-        temp.add(shop);
-        temp.add(movie);
-
+        List<Integer> temp = Arrays.asList(shop,movie);
         int x = map.get(temp);
 
-        List<Integer> temp1 = new ArrayList<>(); 
-        temp1.add(shop);    temp1.add(movie);    temp1.add(x);
-
-        rented.remove(temp1);
-        
-        List<Integer> adds = new ArrayList<>();
-        adds.add(shop);     adds.add(x);
-
-        data.get(movie).add(adds);  
+        rented.remove(Arrays.asList(shop,movie,x));
+        data.get(movie).add(Arrays.asList(shop,x));  
     }
     
     public List<List<Integer>> report() 
@@ -110,9 +83,7 @@ class MovieRentingSystem
             if(c>=5)
                 break;
 
-            List<Integer> ans = new ArrayList<>();
-            ans.add(a.get(0));  ans.add(a.get(1));
-            list.add(ans);
+            list.add(Arrays.asList(a.get(0),a.get(1)));
             c++;
         }       
 
