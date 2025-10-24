@@ -29,3 +29,20 @@ class Solution
         return balance[i];
     }
 }
+
+/*
+CONCEPT -> 
+            1 digit -> 1 is the only possibility
+            2 digit -> 2 is the only possibility
+        The above two are base cases
+
+            3 digit -> (3,0) OR (2,1)
+            4 digit -> (4,0) OR (3,1) OR (2,2)
+                        Here (2,2) is invalid -> two pairs cant be same
+
+            5 digit -> (5,0) OR (4,1) OR (3,2)
+            6 digit -> (6,0) OR (5,1) OR (4,2) OR   (3,3)❌
+             
+            and soo on........
+            according to constrains 7 digit is the maximum possible answer
+*/
