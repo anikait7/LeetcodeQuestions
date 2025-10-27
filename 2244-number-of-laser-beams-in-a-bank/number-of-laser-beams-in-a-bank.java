@@ -4,7 +4,6 @@ class Solution
     {
         int count=0;
         int prev=0;
-        int arr[] = new int[bank.length];
 
         for(int i=0;i<bank.length;i++)
         {
