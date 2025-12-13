@@ -20,22 +20,15 @@ class Solution
             }
         }
 
-        int pre[] = new int[prime.size()+1];
+        int max=0;        int sum=0;
+
         for(int i=0;i<prime.size();i++)
-            pre[i+1]=pre[i]+prime.get(i);
-
-        int max=0;
-        for(int j=1;j<pre.length;j++)
         {
-            int sum=pre[j]-pre[0];
-            if(set.contains(sum) && sum>max)
+            sum+=prime.get(i);
+            if(set.contains(sum))
                 max=sum;
-
-            if(sum>n)
-                break;
         }
         
-
         return max;
     }
 }
