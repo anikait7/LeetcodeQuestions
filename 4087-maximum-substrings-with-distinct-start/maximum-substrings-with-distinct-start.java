@@ -2,11 +2,19 @@ class Solution
 {
     public int maxDistinct(String s) 
     {
-        Set<Character> set = new HashSet<>();
-        
-        for(int i=0;i<s.length();i++)
-            set.add(s.charAt(i));
+        int arr[] = new int[26];
+        int c=0;
 
-        return set.size();
+        for(int i=0;i<s.length();i++)
+        {
+            int ch = s.charAt(i)-'a';
+            if(arr[ch]==0)
+            {
+                c++;
+                arr[ch]++;
+            }
+        }
+
+        return c;
     }
 }
