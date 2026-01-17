@@ -67,7 +67,6 @@ class Solution
         for(int i=0;i<row.size();i++)
         {
             int size = row.get(i).get(1)-row.get(i).get(0);
-            System.out.println(row.get(i).get(1)+"  "+row.get(i).get(0));
 
             for(int j=0;j<col.size();j++)
             {
