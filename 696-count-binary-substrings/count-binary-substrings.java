@@ -4,7 +4,6 @@ class Solution
     {
         int count=0;
         int prev=0;     int curr=1;
-        s+=" ";     
 
         for(int i=1;i<s.length();i++)
         {
@@ -19,6 +18,6 @@ class Solution
         }
 
 
-        return count;
+        return count+Math.min(prev,curr);
     }
 }
