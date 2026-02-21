@@ -7,17 +7,7 @@ class Solution
 
         for(int i=left;i<=right;i++)
         {
-            int c=0;          int num=i;
-
-            while(num>0)
-            {
-                if((num&1)==1)
-                    c++;
-
-                num>>=1;
-            }
-
-            if(set.contains(c))
+            if(set.contains(Integer.bitCount(i)))
                 count++;
         }
 
