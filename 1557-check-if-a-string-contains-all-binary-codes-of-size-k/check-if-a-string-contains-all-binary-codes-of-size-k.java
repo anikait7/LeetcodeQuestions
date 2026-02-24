@@ -5,10 +5,12 @@ class Solution
         Set<String> set = new HashSet<>();
 
         for(int i=0;i<=s.length()-k;i++)
+        {
             set.add(s.substring(i,i+k));
 
-        if(set.size()== (1<<k))
-            return true;
+            if(set.size()== (1<<k))
+                return true;    
+        }
 
         return false;
     }
