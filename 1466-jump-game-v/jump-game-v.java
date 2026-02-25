@@ -7,7 +7,7 @@ class Solution
         if(index<0 || index>=arr.length)
             return 0;
 
-        if(dp[index]!=-1)
+        if(dp[index]!=0)
             return dp[index];
 
         int x=1;
@@ -36,10 +36,9 @@ class Solution
     {
         int n = arr.length;
         dp = new int[n];
-        Arrays.fill(dp,-1);
 
         for(int i=0;i<n;i++)
-            dp[i]=Math.max(dp[i],recursive(arr, d, i));
+            dp[i]=recursive(arr, d, i);
 
         int max=0;
         for(int i : dp)
