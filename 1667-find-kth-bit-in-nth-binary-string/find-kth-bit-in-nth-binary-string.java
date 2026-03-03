@@ -19,13 +19,10 @@ class Solution
         StringBuilder sb = new StringBuilder();
         StringBuilder sb1 = new StringBuilder("0");
 
-        String w="";
-        int i;
-
         if(n==1)
             return '0';
 
-        for(i=2;i<=n;i++)
+        for(int i=2;i<=n;i++)
         {
             sb.append(sb1.toString());
             sb.append("1");
@@ -34,9 +31,7 @@ class Solution
             sb1.append(sb.toString());
             sb.setLength(0);
         }
-        
-        w=sb1.toString();
-        
-        return w.charAt(k-1);
+
+        return sb1.charAt(k-1);
     }
 }
