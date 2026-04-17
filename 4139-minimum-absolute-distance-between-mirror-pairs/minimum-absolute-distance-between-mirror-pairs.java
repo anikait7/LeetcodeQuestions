@@ -1,5 +1,8 @@
 class Solution 
 {
+    //better method reverse every current number and check if the reverse existed in the past. Since with every update
+    //the old reverse pos is getting replaced by the latest no need of pq. Integer works well.
+
     public int minMirrorPairDistance(int[] nums) 
     {
         int dist=nums.length;
@@ -28,8 +31,6 @@ class Solution
 
                 if(!pq.isEmpty())
                     dist=Math.min(dist,pq.peek()-i);
-
-                map.put(rev,pq);
             }
         }
 
