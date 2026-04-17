@@ -13,8 +13,12 @@ class Solution
 
         for(int i=0;i<nums.length;i++)
         {
-            StringBuilder sb = new StringBuilder(String.valueOf(nums[i]));            
-            int rev = Integer.parseInt(sb.reverse().toString());
+            int rev=0;
+            while(nums[i]>0)
+            {
+                rev=rev*10+nums[i]%10;
+                nums[i]/=10;
+            }
 
             if(map.containsKey(rev))
             {
