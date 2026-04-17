@@ -28,6 +28,8 @@ class Solution
 
                 if(!pq.isEmpty())
                     dist=Math.min(dist,pq.peek()-i);
+
+                map.put(rev,pq);
             }
         }
 
