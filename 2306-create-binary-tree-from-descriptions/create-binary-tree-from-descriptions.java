@@ -18,11 +18,14 @@ class Solution
     public TreeNode createBinaryTree(int[][] descriptions) 
     {
         Map<Integer,TreeNode> map = new HashMap<>();
+        Set<Integer> set = new HashSet<>();
 
         for(int i=0;i<descriptions.length;i++)
         {
             TreeNode p;
             TreeNode q = new TreeNode(descriptions[i][1]);
+
+            set.add(descriptions[i][0]);
 
             if(!map.containsKey(descriptions[i][0]))
             {
@@ -45,10 +48,6 @@ class Solution
             else
                 p.right=q;
         }
-
-        Set<Integer> set = new HashSet<>();
-        for(int i=0;i<descriptions.length;i++)
-            set.add(descriptions[i][0]);
 
         for(int i=0;i<descriptions.length;i++)
             set.remove(descriptions[i][1]);
