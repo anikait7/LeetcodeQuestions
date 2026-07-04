@@ -37,7 +37,6 @@ class Solution
             }
         }
 
-        System.out.print(calc);
         //row + col + compute max
         PriorityQueue<int []> queue = new PriorityQueue<>((a,b) -> b[2]-a[2]);
         queue.add(new int[]{0,0,calc});
