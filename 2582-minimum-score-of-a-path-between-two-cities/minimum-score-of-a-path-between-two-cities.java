@@ -17,7 +17,7 @@ class Solution
         boolean visited[] = new boolean[n+1];
         visited[n]=true;
 
-        Queue<Integer> queue = new LinkedList<>();
+        Queue<Integer> queue = new ArrayDeque<>();
         queue.add(n);
 
         while(!queue.isEmpty())
