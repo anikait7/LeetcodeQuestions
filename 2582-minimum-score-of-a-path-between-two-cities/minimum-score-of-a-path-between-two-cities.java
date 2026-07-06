@@ -2,16 +2,16 @@ class Solution
 {
     public int minScore(int n, int[][] roads) 
     {
-        Map<Integer,List<Integer>> map = new HashMap<>();
+        List<Integer> map[] = new ArrayList[n+1];
         int min=Integer.MAX_VALUE;
 
         for(int i=1;i<=n;i++)
-            map.put(i, new ArrayList<>());
+            map[i]=new ArrayList<>();
 
         for(int road[] : roads)
         {
-            map.get(road[0]).add(road[1]);
-            map.get(road[1]).add(road[0]);
+            map[road[0]].add(road[1]);
+            map[road[1]].add(road[0]);
         }
 
         boolean visited[] = new boolean[n+1];
@@ -24,12 +24,12 @@ class Solution
         {
             int x = queue.poll();
 
-            for(int i=0;i<map.get(x).size();i++)
+            for(int i=0;i<map[x].size();i++)
             {
-                if(!visited[map.get(x).get(i)])
+                if(!visited[map[x].get(i)])
                 {
-                    visited[map.get(x).get(i)]=true;
-                    queue.add(map.get(x).get(i));
+                    visited[map[x].get(i)]=true;
+                    queue.add(map[x].get(i));
                 }
             }
         }
