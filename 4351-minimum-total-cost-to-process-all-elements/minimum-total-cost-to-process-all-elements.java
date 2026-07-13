@@ -17,8 +17,6 @@ class Solution
                 operations+=temp;
                 k=copy*temp-nums[i]+k;
             }
-
-            System.out.println(operations);
         }
 
         operations%=MOD;
