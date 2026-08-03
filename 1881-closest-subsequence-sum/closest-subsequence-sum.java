@@ -59,12 +59,13 @@ class Solution
 }
 
 /*
-{0,7,-9,-2} {0,15,-2,13}  goal=-5
-{0,7,-9,-2} {-2,0,13,15} 
-    eqn:   (x1+x2) - goal = min &&
-           (x1+x2) - goal = -min
+    {0,7,-9,-2} {0,15,-2,13}  goal=-5
+    {0,7,-9,-2} {-2,0,13,15} 
+    eqn:   |(x1+x2) - goal| = min we want this to be 0
+           
+           x2 - (goal-x1) = 0
+           x2 = goal-x1
 
         here we need min to be 0 and we need to find x2
-        x2=goal-x1
-        x2=x1-goal
+        
 */
