@@ -73,6 +73,8 @@ class Solution
                 //lb1 is starting point
                 //lb2-1 is ending point
 
+                //mathematics comes here double int issue is caused thats why 109/111 in the first try
+
                 int totalCount = count+i;
                 if((SUM*totalCount)%len!=0)
                     continue;
