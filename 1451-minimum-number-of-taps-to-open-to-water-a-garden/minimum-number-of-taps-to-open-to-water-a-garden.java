@@ -13,7 +13,6 @@ class Solution
 
         if(x[index][0]>last)
             return N+2;
-
         
         int copy=last;
         int ptr=index;  
@@ -39,15 +38,13 @@ class Solution
         int len = ranges.length;
         x = new int[len][2];
 
-        for(int i=0;i<len;i++)
-            Arrays.fill(x[i],-1);
-
         int start=0;
 
         for(int i=0;i<len;i++)
         {
             if(ranges[i]==0)
             {
+                x[i][0]=x[i][1]=-1;
                 start++;
                 continue;
             }
