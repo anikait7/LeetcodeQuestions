@@ -29,7 +29,6 @@ class Solution
             else
                 map.put(nums[right],1);
 
-            System.out.println(map.size());
             right++;
         }
 
