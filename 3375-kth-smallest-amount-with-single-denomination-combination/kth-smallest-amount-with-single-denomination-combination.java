@@ -61,6 +61,19 @@ class Solution
         long newLCM = currentLCM/b*coins[index];
 
         recursive(coins,index+1,count-1,c,b,newLCM);
+
+        /*
+            What this functions does
+            LCM * HCF = num1 * num2
+            Since we know computing LCM is of high TC, we find HCF aka GCD and then find LCM preventing TLE
+            Every time I assume to include a number -> LCM = num1*num2/gcd
+                                                            num1 = currentLCM 
+                                                            num2 = coins[index] (i am including it)
+
+                                                            GCD = gcd of (coins[index],currentLCM)
+
+                                            All these combined gives me new LCM which i pass in the recursion
+        */
     }
 
     public long findKthSmallest(int[] coins, int k) 
