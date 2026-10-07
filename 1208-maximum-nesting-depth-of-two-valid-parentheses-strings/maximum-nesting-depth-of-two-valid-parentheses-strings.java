@@ -12,17 +12,15 @@ class Solution
             char ch2 = seq.charAt(i+1);
 
             if(ch1=='(' && ch2=='(')
-                arr[i]=c++;
+                arr[i]=(c++)%2;
             else
             if(ch1==')' && ch2==')')
-                arr[i]=c--;
+                arr[i]=(c--)%2;
             else
-                arr[i]=c;
+                arr[i]=c%2;
         }
 
         arr[len-1]=0;
-        for(int i=0;i<len;i++)
-            arr[i]%=2;
 
         return arr;
     }
