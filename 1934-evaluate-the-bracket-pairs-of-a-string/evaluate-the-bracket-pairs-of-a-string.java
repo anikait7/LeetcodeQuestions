@@ -12,14 +12,11 @@ class Solution
         {
             int x = s.indexOf('(');
             if(x==-1)
-            {
-
                 break;
-            }
+
             int y = s.indexOf(')');
 
-            String before = s.substring(0,x);
-            sb.append(before);
+            sb.append(s.substring(0,x));
 
             String val = s.substring(x+1,y);
             if(map.containsKey(val))
