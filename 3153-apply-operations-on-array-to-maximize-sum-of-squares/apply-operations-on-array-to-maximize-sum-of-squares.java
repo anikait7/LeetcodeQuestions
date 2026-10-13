@@ -5,7 +5,19 @@ class Solution
         int bits[] = new int[32];
 
         //index 0 = leftmost bit
-        // index 31 = rightmost bit
+        //index 31 = rightmost bit
+
+        /*
+            suppose we have two numbers x AND y.
+            a = x&y
+            b = x|y
+
+            then x+y == a+b
+            the concept: & and | together just rearranges the bits making the sum of the system constant but value of individual element changes
+
+            x^2 + y^2 <= a^2 + b^2
+            using the above concept, we can make b as large as possible to get the maximum square. This is the whole concept
+        */
 
         for(int i=0;i<32;i++)
         {
