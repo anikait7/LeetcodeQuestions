@@ -30,17 +30,21 @@ class Solution
         }
 
         long sum=0;
+        int last=31;
 
         for(int i=1;i<=k;i++)
         {
             int temp=0;
-            for(int j=31;j>=0;j--)
+            for(int j=last;j>=0;j--)
             {
                 if(bits[j]>0)
                 {
                     bits[j]--;
                     temp|=(1<<j);
                 }
+
+                while(last>=0 && bits[last]==0)
+                    last--;
             }
 
             if(temp==0)
