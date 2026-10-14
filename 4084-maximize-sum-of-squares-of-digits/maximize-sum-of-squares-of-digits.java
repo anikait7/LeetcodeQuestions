@@ -2,25 +2,21 @@ class Solution
 {
     public String maxSumOfSquares(int num, int sum) 
     {
-        StringBuilder sb = new StringBuilder();
-        int c=1;
+        if(num*9<sum)
+            return "";
 
-        while(sum!=0 || c<=num)
+        StringBuilder sb = new StringBuilder();
+
+        for(int i=9;i>=1;i--)
         {
-            for(int i=Math.min(sum,9);i>=0;i--)
-            {
-                if(sum-i>=0)
-                {
-                    sum-=i;
-                    sb.append((char)('0'+i));
-                    break;
-                }
-            }
-            c++;
+            int x = sum/i;
+            if(x!=0)
+                sb.repeat(String.valueOf(i),x); 
+            sum-=x*i;
         }
 
-        if(sb.length()>num)
-            return "";
+        int left = num-sb.length();
+        sb.repeat("0",left);
 
         return sb.toString();
     }
